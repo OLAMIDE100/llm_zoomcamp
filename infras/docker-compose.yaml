@@ -1,0 +1,19 @@
+
+version: "3.7"
+
+
+
+
+
+
+services:
+  elastic_search:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+    container_name: elastic_search
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: false
+      
